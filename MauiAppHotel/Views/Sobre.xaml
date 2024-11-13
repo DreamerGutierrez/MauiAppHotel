@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#8e24aa" Offset="0.0" />
+            <GradientStop Color="{StaticResource Tertiary}" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+
+    <VerticalStackLayout Padding="20"
+                         Spacing="20"
+                         VerticalOptions="CenterAndExpand" >
+
+        <Label Text="Sobre o Desenvolvedor"
+               FontSize="32"
+               FontFamily="KalamBold"
+               FontAttributes="Bold"
+               TextColor="{StaticResource Black}"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
+        
+        <Frame Padding="20"
+               CornerRadius="15"
+               HasShadow="True"
+               BackgroundColor="{StaticResource OffBlack}">
+            <VerticalStackLayout>
+                <Label Text="Desenvolvedor: Renan Gutierrez"
+                       FontSize="20"
+                       FontFamily="Kalam"
+                       TextColor="{StaticResource SecondaryDarkText}"
+                       HorizontalOptions="Start"
+                       Padding="10"/>
+
+                <Label Text="Ano de Desenvolvimento: 2024"
+                       FontSize="20"
+                       FontFamily="Kalam"
+                       TextColor="{StaticResource SecondaryDarkText}"
+                       HorizontalOptions="Start"
+                       Padding="10"/>
+
+                <Label Text="Este aplicativo foi criado como parte de um projeto acadêmico para o curso de Desenvolvimento de Sistemas no 2º Modulo da ETEC."
+                       FontSize="20"
+                       FontFamily="Kalam"
+                       TextColor="{StaticResource SecondaryDarkText}"
+                       HorizontalOptions="Start"
+                       Padding="10"/>
+            </VerticalStackLayout>
+        </Frame>
+        
+        <Button Text="Voltar"
+                BackgroundColor="{StaticResource Tertiary}"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="20"
+                Margin="20,10,20,0"
+                Padding="10"
+                HorizontalOptions="Center"
+                Clicked="OnBackButtonClicked" />
+        
+    </VerticalStackLayout>
+</ContentPage>

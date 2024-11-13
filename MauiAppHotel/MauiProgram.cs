@@ -13,6 +13,9 @@ namespace MauiAppHotel
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Kalam-Bold.tff", "KalamBold");
+                    fonts.AddFont("Kalam-Light.tff", "KalamLight");
+                    fonts.AddFont("Kalam-Regular.tff", "Kalam");
                 });
 
 #if DEBUG
