@@ -14,8 +14,8 @@
 
     <ScrollView>
         <VerticalStackLayout VerticalOptions="CenterAndExpand"
-                         Padding="10"
-                         Spacing="10">
+                             Padding="10"
+                             Spacing="10">
 
             <Label Text="Cálculo da Diária"
                    FontFamily="KalamBold"
@@ -27,76 +27,79 @@
                    Margin="0,10,0,20" />
 
             <Frame Padding="10"
-               CornerRadius="15"
-               HasShadow="True">
+                   CornerRadius="15"
+                   HasShadow="True">
                 <VerticalStackLayout>
                     <Grid RowDefinitions="Auto, Auto"
-                      ColumnDefinitions="*, *, 2*">
+                          ColumnDefinitions="*, *, 2*">
 
                         <Label Grid.Row="0" Grid.Column="0"
-                           Text="Adultos:" />
+                               Text="Adultos:" />
 
                         <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="{StaticResource Primary}"
-                           Text="{Binding Value}"
-                           BindingContext="{x:Reference stp_adultos}"/>
+                               TextColor="{StaticResource Primary}"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_adultos}"/>
 
                         <Stepper Grid.Row="0" Grid.Column="2"
-                             x:Name="stp_adultos"
-                             Minimum="0"
-                             Maximum="10"
-                             Increment="1" />
+                                 x:Name="stp_adultos"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1" />
 
                         <Label Grid.Row="1" Grid.Column="0"
-                           Text="Crianças:" />
+                               Text="Crianças:" />
 
                         <Label Grid.Row="1" Grid.Column="1"
-                           TextColor="{StaticResource Primary}"
-                           Text="{Binding Value}"
-                           BindingContext="{x:Reference stp_criancas}"/>
+                               TextColor="{StaticResource Primary}"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_criancas}"/>
 
                         <Stepper Grid.Row="1" Grid.Column="2"
-                             x:Name="stp_criancas"
-                             Minimum="0"
-                             Maximum="10"
-                             Increment="1" />
+                                 x:Name="stp_criancas"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1" />
                     </Grid>
 
                     <Frame Padding="10" Margin="10"
-                       CornerRadius="10"
-                       HasShadow="True">
+                           CornerRadius="10"
+                           HasShadow="True">
                         <VerticalStackLayout>
 
                             <Label Text="Escolha sua Suíte"
-                               TextTransform="Uppercase"
-                               FontSize="Subtitle"
-                               TextColor="{StaticResource Primary}"/>
+                                   TextTransform="Uppercase"
+                                   FontSize="Subtitle"
+                                   TextColor="{StaticResource Primary}"/>
 
                             <Picker x:Name="pck_quarto"
-                                Title="Selecione sua Acomodação" />
+                                    Title="Selecione sua Acomodação"
+                                    ItemDisplayBinding="{Binding Descricao}"/>
                         </VerticalStackLayout>
                     </Frame>
 
                     <Frame Padding="10" Margin="10"
-                       CornerRadius="10"
-                       HasShadow="True">
+                           CornerRadius="10"
+                           HasShadow="True">
                         <VerticalStackLayout Spacing="10">
 
                             <Label Text="Período da Estadia"
-                               TextTransform="Uppercase"
-                               FontSize="Subtitle"
-                               TextColor="{StaticResource Primary}"/>
+                                   TextTransform="Uppercase"
+                                   FontSize="Subtitle"
+                                   TextColor="{StaticResource Primary}"/>
 
                             <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                                 <Label Text="Check-in:" />
                                 <DatePicker x:Name="dtpck_checkin"
-                                        Format="dd/MM/yyyy" />
+                                            DateSelected="dtpck_checkin_DateSelected"
+                                            Format="dd/MM/yyyy" />
                             </HorizontalStackLayout>
 
                             <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                                 <Label Text="Check-out:"/>
                                 <DatePicker x:Name="dtpck_checkout"
-                                        Format="dd/MM/yyyy" />
+                                            DateSelected=""
+                                            Format="dd/MM/yyyy" />
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                     </Frame>
@@ -108,7 +111,8 @@
                             CornerRadius="20"
                             Margin="20,10,20,0"
                             Padding="10"
-                            HorizontalOptions="Center"/>
+                            HorizontalOptions="Center"
+                            Clicked="Button_Clicked"/>
                 </VerticalStackLayout>
             </Frame>
 
